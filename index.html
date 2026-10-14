@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="referrer" content="no-referrer">
+<title>WG 出欠・議案の提出</title>
+<meta name="theme-color" content="#17334c">
+<link rel="icon" href="https://jiaheritage-ai.github.io/card/icon-180.png">
+<link rel="apple-touch-icon" href="https://jiaheritage-ai.github.io/card/icon-180.png">
+<style>
+  html, body { margin: 0; height: 100%; background: #f2f5f7; }
+  iframe { display: block; border: 0; width: 100%; height: 100%; height: 100dvh; }
+</style>
+</head>
+<body>
+<!--
+  JIA文化財修復塾WG「WG 出欠・議案の提出」の公開ページです。
+  Apps Scriptの画面をこのページの中に表示して、Googleの青帯を出さないようにしています。
+  下の WEBAPP_URL を、②議案書Web（Jia wg agenda web） のWebアプリURL（「デプロイを管理」に出ている、末尾が /exec のURL）に書き換えてください。
+  デプロイは「新バージョン」で更新すればURLは変わらないので、ここを直す必要はありません。
+-->
+<script>
+  var WEBAPP_URL = 'https://script.google.com/macros/s/ここにデプロイIDを貼る/exec';
+  var params = new URLSearchParams(location.search);
+  var f = document.createElement('iframe');
+  f.title = 'WG 出欠・議案の提出';
+  f.allow = 'clipboard-write';
+  var q = params.toString();
+  f.src = WEBAPP_URL + (q ? '?' + q : '');
+  document.body.appendChild(f);
+</script>
+<noscript>このページを表示するにはJavaScriptを有効にしてください。</noscript>
+</body>
+</html>
